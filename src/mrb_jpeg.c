@@ -227,13 +227,13 @@ mrb_mruby_jpeg_gem_init(mrb_state* mrb)
   struct RClass *module_jpeg;
 
   module_jpeg = mrb_define_module(mrb, "JPEG");
-  mrb_define_class_method(mrb, module_jpeg, "decompress_file", mrb_jpeg_decompress_file, ARGS_REQ(1));
-  mrb_define_class_method(mrb, module_jpeg, "decompress_data", mrb_jpeg_decompress_data, ARGS_REQ(1));
+  mrb_define_class_method(mrb, module_jpeg, "decompress_file", mrb_jpeg_decompress_file, MRB_ARGS_REQ(1));
+  mrb_define_class_method(mrb, module_jpeg, "decompress_data", mrb_jpeg_decompress_data, MRB_ARGS_REQ(1));
 
   class_jpeg_image = mrb_define_class_under(mrb, module_jpeg, "JPEGImage", mrb->object_class);
-  mrb_define_method(mrb, class_jpeg_image, "data", mrb_jpeg_data_get, ARGS_NONE());
-  mrb_define_method(mrb, class_jpeg_image, "width", mrb_jpeg_width_get, ARGS_NONE());
-  mrb_define_method(mrb, class_jpeg_image, "height", mrb_jpeg_height_get, ARGS_NONE());
+  mrb_define_method(mrb, class_jpeg_image, "data", mrb_jpeg_data_get, MRB_ARGS_NONE());
+  mrb_define_method(mrb, class_jpeg_image, "width", mrb_jpeg_width_get, MRB_ARGS_NONE());
+  mrb_define_method(mrb, class_jpeg_image, "height", mrb_jpeg_height_get, MRB_ARGS_NONE());
 }
 
 void
